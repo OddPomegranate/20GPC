@@ -1,0 +1,120 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RollForward>Major</RollForward>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <!-- Properties/AssemblyInfo.cs already sets Title/Product/Company/Version by
+         hand; without this the SDK also auto-generates an AssemblyInfo, and the
+         two collide with "duplicate attribute" errors. -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Icon.ico" />
+    <None Remove="Icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico">
+      <LogicalName>Icon.ico</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icon.bmp">
+      <LogicalName>Icon.bmp</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Activates the MonoGame Content Pipeline build (MGCB) for
+         Content\Content.mgcb. Currently this only lists real shader (.fx)
+         source for ForeverWars's effects, reconstructed after discovering
+         the original Wave/Sound Bank-style .xnb effect files were compiled
+         Xbox 360 GPU shader bytecode that MonoGame's DesktopGL/OpenGL
+         backend cannot load ("This does not appear to be a MonoGame MGFX
+         file!"). As more minigames' shader crashes get fixed the same way,
+         their .fx sources get added to Content.mgcb and nothing else needs
+         to change here. -->
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Decoded XACT audio (extracted from the original Xbox 360 Wave Bank /
+         Music Wave Bank .xwb files, which use the XMA codec that MonoGame's
+         DesktopGL/OpenAL backend cannot decode). These are loose runtime
+         assets loaded directly via SoundEffect.FromStream in AudioCompat.cs,
+         not run through the Content Pipeline. -->
+    <None Include="Content\Sound\Extracted\**\*.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Sound\Extracted\cue_map.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Every file anywhere under Content\ gets copied to the output directory
+         (Copy if newer), not just .xnb assets but loose data files too
+         (e.g. the Boss\*.txt files below, and Fighters\/Shuttles\/Stations\*.txt
+         which previously had to be set by hand in Solution Explorer one at a
+         time). Anything new dropped into Content\ going forward is covered
+         automatically, no per-file property clicking needed.
+
+         Excluded:
+           Content\bin\** and Content\obj\**: these are the MonoGame
+           Content Pipeline's own build output/intermediate folders (see
+           Content.mgcb's /outputDir and /intermediateDir). The Content
+           Pipeline build step already copies its own output to the app's
+           output directory; matching them here too would just duplicate
+           that copy and could race with it.
+
+           Content\_xbox360_original_effects_backup\**: the original
+           broken Xbox 360 shader .xnb files, kept for reference only, not
+           meant to ship. -->
+    <None Remove="Content\bin\**\*" />
+    <None Remove="Content\obj\**\*" />
+    <None Remove="Content\_xbox360_original_effects_backup\**\*" />
+    <!-- FIX (dotnet publish "Found multiple publish output files with the
+         same relative path"): Content.mgcb itself was being swept up by the
+         Content\**\* wildcard below and copied to every build's output
+         folder (bin\Debug\net9.0\Content\Content.mgcb, bin\Release\net9.0\
+         Content\Content.mgcb) even though it's a build-time MGCB project
+         script, not a runtime game asset. MonoGame's content-builder tooling
+         then discovered those stray copies as additional content projects to
+         build, re-compiling the SAME effects/fonts a second and third time
+         into bin\Debug\...\Content\bin\DesktopGL and bin\Release\...\
+         Content\bin\DesktopGL - all three copies mapping to the identical
+         output-relative "Content/X.xnb" path, which dotnet publish correctly
+         refuses to resolve. Excluding Content.mgcb from the copy wildcard
+         stops it from ever landing in an output folder in the first place, so
+         there is only ever ONE real Content.mgcb (the source one) for the
+         content builder to find. -->
+    <None Remove="Content\Content.mgcb" />
+    <None Update="Content\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Content\ForeverWars\Data\Boss\Barbarian.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\ForeverWars\Data\Boss\battleShip.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\ForeverWars\Data\Boss\cruiser.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\ForeverWars\Data\Boss\Goliath.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\ForeverWars\Data\Boss\kType.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Content\ForeverWars\Data\Boss\Nemesis.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

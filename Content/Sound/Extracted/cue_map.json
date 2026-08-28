@@ -1,0 +1,1568 @@
+{
+  "wavebank_names": [
+    "Wave Bank",
+    "Music Wave Bank"
+  ],
+  "cues": {
+    "theSkyIsFalling Whiz": [
+      [
+        0,
+        199
+      ]
+    ],
+    "theSkyIsFalling Stone Land": [
+      [
+        0,
+        189
+      ],
+      [
+        0,
+        190
+      ],
+      [
+        0,
+        191
+      ],
+      [
+        0,
+        188
+      ]
+    ],
+    "theSkyIsFalling Hit": [
+      [
+        0,
+        244
+      ],
+      [
+        0,
+        68
+      ],
+      [
+        0,
+        67
+      ]
+    ],
+    "theSkyIsFalling Step": [
+      [
+        0,
+        193
+      ],
+      [
+        0,
+        194
+      ],
+      [
+        0,
+        195
+      ],
+      [
+        0,
+        196
+      ],
+      [
+        0,
+        129
+      ]
+    ],
+    "sumo Failure": [
+      [
+        0,
+        85
+      ]
+    ],
+    "twoTrackTanks FireCannon": [
+      [
+        0,
+        28
+      ],
+      [
+        0,
+        231
+      ],
+      [
+        0,
+        230
+      ],
+      [
+        0,
+        232
+      ]
+    ],
+    "theImpossibleGame Jump": [
+      [
+        0,
+        193
+      ]
+    ],
+    "theImpossibleGame Land": [
+      [
+        0,
+        32
+      ]
+    ],
+    "riskyRiskyRisk Move": [
+      [
+        0,
+        24
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "riskyRiskyRisk Select": [
+      [
+        0,
+        15
+      ]
+    ],
+    "riskyRiskyRisk Invade": [
+      [
+        0,
+        36
+      ],
+      [
+        0,
+        64
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "riskyRiskyRisk Roll Dice": [
+      [
+        0,
+        295
+      ],
+      [
+        0,
+        296
+      ],
+      [
+        0,
+        294
+      ],
+      [
+        0,
+        175
+      ],
+      [
+        0,
+        27
+      ]
+    ],
+    "riskyRiskyRisk Fail": [
+      [
+        0,
+        72
+      ],
+      [
+        0,
+        65
+      ]
+    ],
+    "riskyRiskyRisk Succeed": [
+      [
+        0,
+        13
+      ],
+      [
+        0,
+        34
+      ]
+    ],
+    "theGameOfLifeCycles Die": [
+      [
+        0,
+        172
+      ]
+    ],
+    "swingSideways Collide": [
+      [
+        0,
+        187
+      ]
+    ],
+    "swingSideways Fire": [
+      [
+        0,
+        184
+      ]
+    ],
+    "swingSideways Hook": [
+      [
+        0,
+        185
+      ]
+    ],
+    "music Menu": [
+      [
+        1,
+        31
+      ]
+    ],
+    "music Silence": [
+      [
+        0,
+        24
+      ]
+    ],
+    "twoTrackTanks TankRoll": [
+      [
+        0,
+        246
+      ]
+    ],
+    "twoTrackTanks Explosion": [
+      [
+        0,
+        168
+      ],
+      [
+        0,
+        76
+      ],
+      [
+        0,
+        218
+      ],
+      [
+        0,
+        217
+      ]
+    ],
+    "topZombies Step Sand": [
+      [
+        0,
+        197
+      ],
+      [
+        0,
+        198
+      ]
+    ],
+    "topZombies Step Gravel": [
+      [
+        0,
+        194
+      ],
+      [
+        0,
+        193
+      ],
+      [
+        0,
+        195
+      ],
+      [
+        0,
+        196
+      ]
+    ],
+    "topZombies Step Grass": [
+      [
+        0,
+        177
+      ],
+      [
+        0,
+        179
+      ],
+      [
+        0,
+        180
+      ]
+    ],
+    "topZombies Shoot Submachinegun": [
+      [
+        0,
+        136
+      ],
+      [
+        0,
+        58
+      ]
+    ],
+    "topZombies Shoot Shotgun": [
+      [
+        0,
+        117
+      ],
+      [
+        0,
+        85
+      ],
+      [
+        0,
+        57
+      ],
+      [
+        0,
+        217
+      ],
+      [
+        0,
+        89
+      ]
+    ],
+    "topZombies Shoot Rifle": [
+      [
+        0,
+        113
+      ],
+      [
+        0,
+        103
+      ],
+      [
+        0,
+        107
+      ],
+      [
+        0,
+        112
+      ]
+    ],
+    "topZombies Shoot Pistol": [
+      [
+        0,
+        71
+      ],
+      [
+        0,
+        104
+      ]
+    ],
+    "topZombies Shoot Grenadelauncher": [
+      [
+        0,
+        76
+      ],
+      [
+        0,
+        100
+      ],
+      [
+        0,
+        168
+      ]
+    ],
+    "topZombies Shoot Deagle": [
+      [
+        0,
+        55
+      ],
+      [
+        0,
+        19
+      ],
+      [
+        0,
+        31
+      ],
+      [
+        0,
+        218
+      ]
+    ],
+    "topZombies Reload": [
+      [
+        0,
+        89
+      ]
+    ],
+    "topZombies Pick Up Gun": [
+      [
+        0,
+        53
+      ]
+    ],
+    "topZombies Hit Zombie": [
+      [
+        0,
+        117
+      ]
+    ],
+    "topZombies Hit Wall": [
+      [
+        0,
+        189
+      ],
+      [
+        0,
+        188
+      ],
+      [
+        0,
+        198
+      ],
+      [
+        0,
+        185
+      ],
+      [
+        0,
+        186
+      ],
+      [
+        0,
+        191
+      ]
+    ],
+    "topZombies Explosion": [
+      [
+        0,
+        218
+      ],
+      [
+        0,
+        217
+      ]
+    ],
+    "topZombies Collect Ammo": [
+      [
+        0,
+        54
+      ],
+      [
+        0,
+        56
+      ]
+    ],
+    "rotoBall Steal": [
+      [
+        0,
+        25
+      ]
+    ],
+    "rotoBall Kick": [
+      [
+        0,
+        11
+      ]
+    ],
+    "rotoBall Catch": [
+      [
+        0,
+        22
+      ]
+    ],
+    "topZombies Rain": [
+      [
+        0,
+        86
+      ],
+      [
+        0,
+        87
+      ]
+    ],
+    "raceInCircles ThrusterPress": [
+      [
+        0,
+        142
+      ],
+      [
+        0,
+        143
+      ]
+    ],
+    "raceInCircles ShipCollide": [
+      [
+        0,
+        182
+      ]
+    ],
+    "raceInCircles Lap": [
+      [
+        0,
+        220
+      ]
+    ],
+    "raceInCircles Checkpoint": [
+      [
+        0,
+        83
+      ]
+    ],
+    "raceInCircles WallCollide": [
+      [
+        0,
+        183
+      ],
+      [
+        0,
+        121
+      ],
+      [
+        0,
+        119
+      ],
+      [
+        0,
+        120
+      ]
+    ],
+    "platformsAreFalling Scratch": [
+      [
+        0,
+        93
+      ],
+      [
+        0,
+        286
+      ]
+    ],
+    "platformsAreFalling Platform Land": [
+      [
+        0,
+        28
+      ]
+    ],
+    "platformsAreFalling Jump": [
+      [
+        0,
+        297
+      ]
+    ],
+    "platformsAreFalling Die": [
+      [
+        0,
+        163
+      ]
+    ],
+    "lunarLander Land": [
+      [
+        0,
+        221
+      ]
+    ],
+    "lunarLander Flag": [
+      [
+        0,
+        223
+      ]
+    ],
+    "lunarLander Crash": [
+      [
+        0,
+        208
+      ],
+      [
+        0,
+        217
+      ]
+    ],
+    "lunarLander Bounce": [
+      [
+        0,
+        207
+      ],
+      [
+        0,
+        214
+      ]
+    ],
+    "hyperChase Crash": [
+      [
+        0,
+        272
+      ]
+    ],
+    "helicopter Rotor": [
+      [
+        0,
+        199
+      ],
+      [
+        0,
+        209
+      ]
+    ],
+    "helicopter Crash": [
+      [
+        0,
+        248
+      ],
+      [
+        0,
+        249
+      ]
+    ],
+    "geometryWars RocketNoise": [
+      [
+        0,
+        215
+      ]
+    ],
+    "geometryWars RocketFired": [
+      [
+        0,
+        213
+      ],
+      [
+        0,
+        256
+      ]
+    ],
+    "geometryWars PlayerHit": [
+      [
+        0,
+        268
+      ]
+    ],
+    "geometryWars PlayerFire": [
+      [
+        0,
+        265
+      ]
+    ],
+    "geometryWars PlayerDie": [
+      [
+        0,
+        266
+      ]
+    ],
+    "geometryWars Explosion Large": [
+      [
+        0,
+        227
+      ],
+      [
+        0,
+        267
+      ]
+    ],
+    "geometryWars EnemyHit": [
+      [
+        0,
+        261
+      ]
+    ],
+    "geometryWars EnemyFire": [
+      [
+        0,
+        263
+      ]
+    ],
+    "connect4 Slot": [
+      [
+        0,
+        75
+      ]
+    ],
+    "connect4 Move": [
+      [
+        0,
+        24
+      ]
+    ],
+    "connect4 Drop": [
+      [
+        0,
+        37
+      ]
+    ],
+    "centipede FireShockwave": [
+      [
+        0,
+        203
+      ],
+      [
+        0,
+        279
+      ]
+    ],
+    "centipede FireNuke": [
+      [
+        0,
+        28
+      ],
+      [
+        0,
+        48
+      ]
+    ],
+    "centipede FireBullet": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        274
+      ]
+    ],
+    "centipede Explosion": [
+      [
+        0,
+        217
+      ]
+    ],
+    "centipede Eat": [
+      [
+        0,
+        40
+      ]
+    ],
+    "centipede BigExplosion": [
+      [
+        0,
+        218
+      ]
+    ],
+    "centipede Die": [
+      [
+        0,
+        93
+      ],
+      [
+        0,
+        85
+      ]
+    ],
+    "raceInCircles ThrusterLoop": [
+      [
+        0,
+        145
+      ],
+      [
+        0,
+        41
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    "geometryWars TurretFired": [
+      [
+        0,
+        293
+      ]
+    ],
+    "topShooter Walk": [
+      [
+        0,
+        177
+      ],
+      [
+        0,
+        179
+      ],
+      [
+        0,
+        180
+      ],
+      [
+        0,
+        197
+      ],
+      [
+        0,
+        198
+      ]
+    ],
+    "topShooter Shoot Submachinegun": [
+      [
+        0,
+        185
+      ],
+      [
+        0,
+        136
+      ],
+      [
+        0,
+        232
+      ]
+    ],
+    "topShooter Shoot Sniper": [
+      [
+        0,
+        232
+      ],
+      [
+        0,
+        227
+      ],
+      [
+        0,
+        112
+      ]
+    ],
+    "topShooter Shoot Shotgun": [
+      [
+        0,
+        85
+      ],
+      [
+        0,
+        89
+      ],
+      [
+        0,
+        117
+      ],
+      [
+        0,
+        231
+      ]
+    ],
+    "topShooter Shoot Rifle": [
+      [
+        0,
+        101
+      ],
+      [
+        0,
+        230
+      ],
+      [
+        0,
+        113
+      ]
+    ],
+    "topShooter Shoot Laser": [
+      [
+        0,
+        145
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "topShooter Shoot Grenade": [
+      [
+        0,
+        168
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        0,
+        76
+      ]
+    ],
+    "topShooter Shoot Deagle": [
+      [
+        0,
+        231
+      ],
+      [
+        0,
+        217
+      ],
+      [
+        0,
+        104
+      ],
+      [
+        0,
+        103
+      ]
+    ],
+    "topShooter Shoot AR": [
+      [
+        0,
+        113
+      ],
+      [
+        0,
+        102
+      ],
+      [
+        0,
+        118
+      ],
+      [
+        0,
+        231
+      ]
+    ],
+    "topShooter Pickup": [
+      [
+        0,
+        56
+      ]
+    ],
+    "topShooter Explosion": [
+      [
+        0,
+        226
+      ]
+    ],
+    "topShooter End Laser": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "hammer Round Complete": [
+      [
+        0,
+        80
+      ],
+      [
+        0,
+        81
+      ],
+      [
+        0,
+        241
+      ]
+    ],
+    "hammer Smash Diamond": [
+      [
+        0,
+        116
+      ],
+      [
+        0,
+        115
+      ],
+      [
+        0,
+        114
+      ],
+      [
+        0,
+        106
+      ],
+      [
+        0,
+        20
+      ],
+      [
+        0,
+        243
+      ],
+      [
+        0,
+        240
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "hammer Smash Player": [
+      [
+        0,
+        21
+      ],
+      [
+        0,
+        18
+      ],
+      [
+        0,
+        155
+      ],
+      [
+        0,
+        150
+      ],
+      [
+        0,
+        128
+      ],
+      [
+        0,
+        109
+      ],
+      [
+        0,
+        242
+      ],
+      [
+        0,
+        240
+      ]
+    ],
+    "hammer Hit": [
+      [
+        0,
+        117
+      ],
+      [
+        0,
+        111
+      ],
+      [
+        0,
+        108
+      ]
+    ],
+    "topShooter Flak Explosion": [
+      [
+        0,
+        227
+      ],
+      [
+        0,
+        230
+      ],
+      [
+        0,
+        231
+      ],
+      [
+        0,
+        232
+      ]
+    ],
+    "topShooter Shoot Flak": [
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        0,
+        217
+      ],
+      [
+        0,
+        75
+      ]
+    ],
+    "topShooter Shoot M249": [
+      [
+        0,
+        230
+      ],
+      [
+        0,
+        113
+      ],
+      [
+        0,
+        104
+      ],
+      [
+        0,
+        231
+      ]
+    ],
+    "topShooter Shoot M4": [
+      [
+        0,
+        113
+      ],
+      [
+        0,
+        231
+      ],
+      [
+        0,
+        104
+      ],
+      [
+        0,
+        110
+      ]
+    ],
+    "topShooter Shoot M9": [
+      [
+        0,
+        71
+      ],
+      [
+        0,
+        102
+      ],
+      [
+        0,
+        104
+      ],
+      [
+        0,
+        218
+      ]
+    ],
+    "topShooter Shoot Mac10": [
+      [
+        0,
+        227
+      ],
+      [
+        0,
+        107
+      ]
+    ],
+    "topShooter Shoot P90": [
+      [
+        0,
+        134
+      ],
+      [
+        0,
+        132
+      ],
+      [
+        0,
+        133
+      ],
+      [
+        0,
+        230
+      ]
+    ],
+    "topShooter Shoot RPG": [
+      [
+        0,
+        233
+      ],
+      [
+        0,
+        145
+      ]
+    ],
+    "microMachines CarEngine": [
+      [
+        0,
+        237
+      ]
+    ],
+    "microMachines Checkpoint": [
+      [
+        0,
+        234
+      ]
+    ],
+    "microMachines Crash": [
+      [
+        0,
+        235
+      ]
+    ],
+    "microMachines Skid": [
+      [
+        0,
+        238
+      ]
+    ],
+    "microMachines Win": [
+      [
+        0,
+        239
+      ]
+    ],
+    "music TwoTrackTanks": [
+      [
+        1,
+        16
+      ]
+    ],
+    "music TopZombies": [
+      [
+        1,
+        1
+      ]
+    ],
+    "music TopShooter": [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        32
+      ]
+    ],
+    "music TheSkyIsFalling": [
+      [
+        1,
+        11
+      ]
+    ],
+    "music TheImpossibleGame": [
+      [
+        1,
+        26
+      ]
+    ],
+    "music TheGameOfLifeCycles": [
+      [
+        1,
+        21
+      ]
+    ],
+    "music SwingSideways": [
+      [
+        1,
+        13
+      ]
+    ],
+    "music Sumo": [
+      [
+        1,
+        7
+      ]
+    ],
+    "music RotoBall": [
+      [
+        1,
+        20
+      ]
+    ],
+    "music RiskyRiskyRisk": [
+      [
+        1,
+        12
+      ]
+    ],
+    "music RaceInCircles": [
+      [
+        1,
+        29
+      ]
+    ],
+    "music PlatformsAreFalling": [
+      [
+        1,
+        22
+      ]
+    ],
+    "music MicroMachines": [
+      [
+        1,
+        27
+      ]
+    ],
+    "music LunarLander": [
+      [
+        1,
+        24
+      ]
+    ],
+    "music HyperChase": [
+      [
+        1,
+        17
+      ]
+    ],
+    "music Helicopter": [
+      [
+        1,
+        18
+      ]
+    ],
+    "music HammerFight": [
+      [
+        1,
+        28
+      ]
+    ],
+    "music GeometryWars": [
+      [
+        1,
+        8
+      ]
+    ],
+    "music Connect4": [
+      [
+        1,
+        19
+      ]
+    ],
+    "music Centipede": [
+      [
+        1,
+        23
+      ]
+    ],
+    "twoTrackTanks TrainWhistle": [
+      [
+        0,
+        245
+      ]
+    ],
+    "twoTrackTanks TrainRollStop": [
+      [
+        1,
+        16
+      ]
+    ],
+    "twoTrackTanks TrainRollStart": [
+      [
+        0,
+        247
+      ],
+      [
+        0,
+        162
+      ]
+    ],
+    "twoTrackTanks Reload": [
+      [
+        0,
+        89
+      ],
+      [
+        0,
+        184
+      ],
+      [
+        0,
+        62
+      ],
+      [
+        0,
+        63
+      ]
+    ],
+    "geometryWars Laser": [
+      [
+        0,
+        269
+      ]
+    ],
+    "menu IntroSound": [
+      [
+        0,
+        257
+      ]
+    ],
+    "menu Whiz": [
+      [
+        0,
+        199
+      ]
+    ],
+    "menu Tick": [
+      [
+        0,
+        24
+      ]
+    ],
+    "menu Click": [
+      [
+        0,
+        22
+      ]
+    ],
+    "geometryWars Explosion Small": [
+      [
+        0,
+        269
+      ],
+      [
+        0,
+        266
+      ],
+      [
+        0,
+        232
+      ]
+    ],
+    "geometryWars Explosion Medium": [
+      [
+        0,
+        230
+      ],
+      [
+        0,
+        267
+      ]
+    ],
+    "centipede PickupGrenade": [
+      [
+        0,
+        280
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "centipede PickupHeatseeker": [
+      [
+        0,
+        281
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "centipede PickupLaser": [
+      [
+        0,
+        285
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "centipede PickupRocket": [
+      [
+        0,
+        282
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "centipede PickupShield": [
+      [
+        0,
+        283
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "twoTrackTanks TankEngine": [
+      [
+        0,
+        286
+      ]
+    ],
+    "twoTrackTanks TurretTurn": [
+      [
+        0,
+        200
+      ],
+      [
+        0,
+        162
+      ],
+      [
+        0,
+        184
+      ]
+    ],
+    "centipede PickupShockwave": [
+      [
+        0,
+        284
+      ],
+      [
+        0,
+        53
+      ]
+    ],
+    "geometryWars LaserCannon": [
+      [
+        0,
+        287
+      ]
+    ],
+    "geometryWars PlayerHitSub": [
+      [
+        0,
+        288
+      ]
+    ],
+    "geometryWars ShockWave": [
+      [
+        0,
+        289
+      ],
+      [
+        0,
+        290
+      ],
+      [
+        0,
+        291
+      ],
+      [
+        0,
+        292
+      ]
+    ],
+    "riskyRiskyRisk Dice Fly In": [
+      [
+        0,
+        199
+      ]
+    ],
+    "riskyRiskyRisk Deselect": [
+      [
+        0,
+        22
+      ]
+    ],
+    "platformsAreFalling Acid Die": [
+      [
+        0,
+        163
+      ],
+      [
+        0,
+        298
+      ]
+    ],
+    "riskyRiskyRisk Complete": [
+      [
+        0,
+        302
+      ],
+      [
+        0,
+        303
+      ]
+    ],
+    "twoTrackTanks Collide": [
+      [
+        0,
+        182
+      ]
+    ],
+    "hyperChase Engine": [
+      [
+        0,
+        273
+      ]
+    ],
+    "lunarLander Thrust": [
+      [
+        0,
+        215
+      ]
+    ],
+    "centipede FireRocket": [
+      [
+        0,
+        277
+      ],
+      [
+        0,
+        278
+      ]
+    ],
+    "centipede FireLaser": [
+      [
+        0,
+        276
+      ],
+      [
+        0,
+        275
+      ]
+    ],
+    "lunarLander ThrusterSide": [
+      [
+        0,
+        216
+      ]
+    ]
+  }
+}

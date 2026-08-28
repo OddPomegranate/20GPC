@@ -1,0 +1,23 @@
+#testShip
+$Afrit
+#ship type 1 (32 size normal)
+&2
+#Ai profile
+@4
+6
+	2
+		0
+		0
+		0
+		0
+	0
+	0
+	0
+0
+7
+	0
+	0
+	0
+	0
+0
+;

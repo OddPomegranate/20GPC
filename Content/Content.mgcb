@@ -1,0 +1,170 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:HiDef
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+
+#begin ForeverWars/Effects/borderShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/Effects/borderShader.fx
+
+#begin ForeverWars/Effects/DecalManagerEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/Effects/DecalManagerEffect.fx
+
+#begin ForeverWars/Effects/gateShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/Effects/gateShader.fx
+
+#begin ForeverWars/Effects/gridShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/Effects/gridShader.fx
+
+#begin ForeverWars/Effects/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/Effects/LineEffect.fx
+
+#begin ForeverWars/GridWarp/blueEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/GridWarp/blueEffect.fx
+
+#begin ForeverWars/GridWarp/cloneEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/GridWarp/cloneEffect.fx
+
+#begin ForeverWars/GridWarp/diminishEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/GridWarp/diminishEffect.fx
+
+#begin ForeverWars/GridWarp/maskEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/GridWarp/maskEffect.fx
+
+#begin ForeverWars/GridWarp/Warp.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:ForeverWars/GridWarp/Warp.fx
+
+#begin LightBikes/Shaders/GridShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:LightBikes/Shaders/GridShader.fx
+
+#begin SuperHighway/Effect/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:SuperHighway/Effect/LineEffect.fx
+
+#begin LunarLander/Effect/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:LunarLander/Effect/LineEffect.fx
+
+#begin SwingGems/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:SwingGems/LineEffect.fx
+
+#begin Zombie/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Zombie/LineEffect.fx
+
+#begin MicroMachines/RenderingHelpers/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:MicroMachines/RenderingHelpers/LineEffect.fx
+
+#begin Shooter/RenderingHelpers/LineEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shooter/RenderingHelpers/LineEffect.fx
+
+#begin Zombie/DecalManagerEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Zombie/DecalManagerEffect.fx
+
+#begin FruitsInARow/Effect/ScreenEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:FruitsInARow/Effect/ScreenEffect.fx
+
+#begin LunarLander/Effect/ScreenEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:LunarLander/Effect/ScreenEffect.fx
+
+#begin RiskyRiskyRisk/Effects/InnerGlow.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:RiskyRiskyRisk/Effects/InnerGlow.fx
+
+#begin Shooter/Player/MaskEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Shooter/Player/MaskEffect.fx
+
+#begin Zombie/FinalPassEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Zombie/FinalPassEffect.fx
+
+#begin Zombie/ShadowHelper2DEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Zombie/ShadowHelper2DEffect.fx
+
+#begin Zombie/WaveNumberEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Zombie/WaveNumberEffect.fx
+
+#begin Menu/Fonts/MainMenuFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/build:Menu/Fonts/MainMenuFont.spritefont
