@@ -56,15 +56,20 @@ internal class Cave
 
 	private bool lastGraceActive;
 
+	// PORTING FIX (fullscreen sizing): cave geometry used to be derived from
+	// graphicsDevice.Viewport at construction time, which is the real (fullscreen-
+	// variable) backbuffer size, not this game's fixed 1280x720 virtual canvas (see
+	// FiftyGames.cs's MasterRenderTarget/letterboxing). Fixed to the constant so the
+	// cave lines up the same way in windowed and fullscreen.
 	public Cave(GraphicsDevice graphicsDevice, Texture2D caveElementImage, Texture2D debug)
 	{
 		randomGenerator = new Random();
 		debugTexture = debug;
 		caveSpeed = 7;
-		caveMid = graphicsDevice.Viewport.Height / 2;
-		caveWid = graphicsDevice.Viewport.Height / 2;
-		graphicsViewportOver2 = graphicsDevice.Viewport.Height / 2;
-		screenAttributes = new Vector2(graphicsDevice.Viewport.Width, graphicsDevice.Viewport.Height);
+		caveMid = 720 / 2;
+		caveWid = 720 / 2;
+		graphicsViewportOver2 = 720 / 2;
+		screenAttributes = new Vector2(1280, 720);
 		caveImageHolder = caveElementImage;
 		caveMaxWid = 500;
 		caveMinWid = 200;

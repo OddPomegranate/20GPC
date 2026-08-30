@@ -67,6 +67,11 @@ internal class HeliChopper : Minigame
 		base.Initialize();
 	}
 
+	// PORTING FIX (fullscreen sizing): copter spawn positions and on-screen layout
+	// used to be derived from base.GraphicsDevice.Viewport, which is the real
+	// (fullscreen-variable) backbuffer size, not this game's fixed 1280x720 virtual
+	// canvas (see FiftyGames.cs's MasterRenderTarget/letterboxing). Fixed to the
+	// constant so layout is identical in windowed and fullscreen.
 	protected override void LoadContent()
 	{
 		spriteBatch = new SpriteBatch(base.GraphicsDevice);
@@ -76,14 +81,14 @@ internal class HeliChopper : Minigame
 		if (AIMODE)
 		{
 			m_Copters = new Copter[1];
-			m_Copters[0] = new Copter(null, new Vector2(200f, base.GraphicsDevice.Viewport.Height / 2), 1f, contentManager.Load<Texture2D>("HeliChopper/Sprites/HelicopterAnimated"), contentManager.Load<Texture2D>("HeliChopper/Sprites/MaskCopter"), alive: true, AIMODE, playerManager);
+			m_Copters[0] = new Copter(null, new Vector2(200f, 720 / 2), 1f, contentManager.Load<Texture2D>("HeliChopper/Sprites/HelicopterAnimated"), contentManager.Load<Texture2D>("HeliChopper/Sprites/MaskCopter"), alive: true, AIMODE, playerManager);
 		}
 		else
 		{
 			m_Copters = new Copter[playerManager.NumberOfPlayers];
 			for (int i = 0; i < playerManager.NumberOfPlayers; i++)
 			{
-				m_Copters[i] = new Copter(playerManager.PlayersConnected[i], new Vector2(200 + i * 130, base.GraphicsDevice.Viewport.Height / 2), 1f, contentManager.Load<Texture2D>("HeliChopper/Sprites/HelicopterAnimated"), contentManager.Load<Texture2D>("HeliChopper/Sprites/debugPixel"), alive: true, AIMODE, playerManager);
+				m_Copters[i] = new Copter(playerManager.PlayersConnected[i], new Vector2(200 + i * 130, 720 / 2), 1f, contentManager.Load<Texture2D>("HeliChopper/Sprites/HelicopterAnimated"), contentManager.Load<Texture2D>("HeliChopper/Sprites/debugPixel"), alive: true, AIMODE, playerManager);
 			}
 		}
 		countDownFont = contentManager.Load<SpriteFont>("Menu/Fonts/MainMenuFont");
@@ -159,7 +164,7 @@ internal class HeliChopper : Minigame
 		base.GraphicsDevice.Clear(Color.CornflowerBlue);
 		spriteBatch.Begin();
 		Vector2 zero = Vector2.Zero;
-		for (int i = 0; i < base.GraphicsDevice.Viewport.Width; i++)
+		for (int i = 0; i < 1280; i++)
 		{
 			zero.X = i;
 			spriteBatch.Draw(m_Background, zero, Color.White);
@@ -184,11 +189,11 @@ internal class HeliChopper : Minigame
 		}
 		if (restart && !AIMODE)
 		{
-			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(642f, base.GraphicsDevice.Viewport.Height / 2 + 2), Color.Black);
-			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, base.GraphicsDevice.Viewport.Height / 2 + 2), Color.Black);
-			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(638f, base.GraphicsDevice.Viewport.Height / 2 - 2), Color.Black);
-			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, base.GraphicsDevice.Viewport.Height / 2 - 2), Color.Black);
-			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, base.GraphicsDevice.Viewport.Height / 2), Color.Red);
+			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(642f, 720 / 2 + 2), Color.Black);
+			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, 720 / 2 + 2), Color.Black);
+			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(638f, 720 / 2 - 2), Color.Black);
+			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, 720 / 2 - 2), Color.Black);
+			spriteBatch.DrawString(countDownFont, ((int)(4f * (restartCounter / 300f))).ToString(), new Vector2(640f, 720 / 2), Color.Red);
 		}
 		spriteBatch.End();
 		base.Draw(gameTime);

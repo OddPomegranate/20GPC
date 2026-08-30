@@ -127,7 +127,12 @@ internal class Diamond : IDisposable
 		});
 		List<Vertices> list2 = list;
 		_breakablePieces = new TimedBreakablePiece[list2.Count];
-		Matrix projection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(gd.Viewport.Width), ConvertUnits.ToSimUnits(gd.Viewport.Height), 0f, 0f, 1f);
+		// PORTING FIX (fullscreen sizing): this camera projection used to be built from
+		// gd.Viewport, the real (fullscreen-variable) backbuffer size, instead of this
+		// game's fixed 1280x720 virtual canvas (see FiftyGames.cs's MasterRenderTarget/
+		// letterboxing) - wrong in fullscreen, where the viewport is the desktop's
+		// native resolution.
+		Matrix projection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(1280), ConvertUnits.ToSimUnits(720), 0f, 0f, 1f);
 		for (int j = 0; j != list2.Count; j++)
 		{
 			_breakablePieces[j] = new TimedBreakablePiece(list2[j], _width, _height, gd, projection, 3000);

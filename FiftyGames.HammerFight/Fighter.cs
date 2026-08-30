@@ -259,7 +259,9 @@ internal class Fighter
 		_isGrabbing = false;
 		_idRange = BreakablePiece.CurrentId;
 		_breakablePieces = new TimedBreakablePiece[_brokenShape.Count];
-		Matrix projection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(gd.Viewport.Width), ConvertUnits.ToSimUnits(gd.Viewport.Height), 0f, 0f, 1f);
+		// PORTING FIX (fullscreen sizing): see Diamond.cs's ReloadContent/LoadContent -
+		// same fix, same reason (fixed 1280x720 virtual canvas, not the live viewport).
+		Matrix projection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(1280), ConvertUnits.ToSimUnits(720), 0f, 0f, 1f);
 		for (int i = 0; i != _brokenShape.Count; i++)
 		{
 			_breakablePieces[i] = new TimedBreakablePiece(_brokenShape[i], _width, _height, gd, projection, 3000);

@@ -105,6 +105,18 @@ public sealed class Cue : IDisposable
 	private readonly SoundEffectInstance _instance;
 	private readonly List<AudioCategory> _categories = new List<AudioCategory>();
 
+	// PORTING FIX: real-time parameters set via SetVariable() (below) used to be a
+	// pure no-op - the original XACT project drove engine/skid loop volume off a
+	// "Speed"/"SkidVolume" RPC curve (0-100) so cars idled quietly and got louder
+	// under way; without it every drivingCue/engine cue played at flat full volume
+	// from the instant it was created. With up to 4 players each starting their own
+	// full-volume engine loop in the same frame (Drift Pixel/MicroMachines - see
+	// MMPlayer.cs), that's audible as a loud, layered wash of engine noise right at
+	// race start. The exact original curve shape wasn't recoverable, so this applies
+	// a reasonable linear approximation (with a soft idle floor so a stationary
+	// engine still hums rather than going silent) instead of doing nothing.
+	private readonly Dictionary<string, float> _variables = new Dictionary<string, float>();
+
 	public string Name { get; }
 
 	public bool IsDisposed { get; private set; }
@@ -151,6 +163,7 @@ public sealed class Cue : IDisposable
 		{
 			volume *= category.Volume;
 		}
+		volume *= GetVariableVolumeScale();
 		if (volume < 0f) volume = 0f;
 		if (volume > 1f) volume = 1f;
 		try
@@ -215,8 +228,39 @@ public sealed class Cue : IDisposable
 
 	public void SetVariable(string name, float value)
 	{
-		// Real-time RPC parameters (e.g. "Filterness") aren't reimplemented -
-		// see the file-level porting note.
+		// Most real-time RPC parameters (e.g. "Filterness") still aren't
+		// reimplemented - see the file-level porting note. "Speed" and
+		// "SkidVolume" (both authored 0-100, same convention every call site
+		// uses - MMPlayer.cs, SuperHighway/Car.cs, TwoTrackTanks/Tank.cs) are
+		// approximated as a volume scale instead of being dropped entirely.
+		_variables[name] = value;
+		ApplyVolume();
+	}
+
+	// Linear approximation of this cue's original engine/skid RPC curve: 0 at
+	// the variable's minimum maps to a quiet idle rather than silence, 100
+	// maps to full volume. Cues with no recognized variable set are unaffected
+	// (scale stays 1).
+	private float GetVariableVolumeScale()
+	{
+		const float idleFloor = 0.15f;
+		float scale = 1f;
+		if (_variables.TryGetValue("Speed", out float speed))
+		{
+			scale *= idleFloor + (1f - idleFloor) * Clamp01(speed / 100f);
+		}
+		if (_variables.TryGetValue("SkidVolume", out float skidVolume))
+		{
+			scale *= idleFloor + (1f - idleFloor) * Clamp01(skidVolume / 100f);
+		}
+		return scale;
+	}
+
+	private static float Clamp01(float value)
+	{
+		if (value < 0f) return 0f;
+		if (value > 1f) return 1f;
+		return value;
 	}
 
 	public void Dispose()

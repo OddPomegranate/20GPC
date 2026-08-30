@@ -50,20 +50,29 @@ internal class Sumo : Minigame
 		base.Initialize();
 	}
 
+	// PORTING FIX (fullscreen sizing): this used to size the effect canvases and lay
+	// out the background/wrestler off base.GraphicsDevice.Viewport, which reflects
+	// whatever the real backbuffer happens to be at LoadContent time - 1280x720 in a
+	// windowed game, but the desktop's native resolution in fullscreen (see
+	// FiftyGames.cs's fullscreen toggle). Everything this game draws still gets
+	// composited into FiftyGames.MasterRenderTarget's fixed 1280x720 surface and
+	// letterboxed to the real screen from there, so this now targets that same fixed
+	// 1280x720 virtual canvas directly instead of the live, fullscreen-variable
+	// viewport.
 	protected override void LoadContent()
 	{
 		_effectCanvas = new RenderTarget2D[10];
 		for (int i = 0; i < _effectCanvas.Length; i++)
 		{
-			_effectCanvas[i] = new RenderTarget2D(base.GraphicsDevice, base.GraphicsDevice.Viewport.Width, base.GraphicsDevice.Viewport.Height);
+			_effectCanvas[i] = new RenderTarget2D(base.GraphicsDevice, 1280, 720);
 		}
 		_spriteBatch = new SpriteBatch(base.GraphicsDevice);
 		_background = _contentManager.Load<Texture2D>("Sumo/Sprites/Ring");
 		_foreground = _contentManager.Load<Texture2D>("Sumo/Sprites/RingOverlay");
-		_backgroundPosition.X = (float)base.GraphicsDevice.Viewport.Width / 2f - (float)_background.Width / 2f;
-		_backgroundPosition.Y = (float)base.GraphicsDevice.Viewport.Height / 2f - (float)_background.Height / 2f;
+		_backgroundPosition.X = (float)1280 / 2f - (float)_background.Width / 2f;
+		_backgroundPosition.Y = (float)720 / 2f - (float)_background.Height / 2f;
 		_font = _contentManager.Load<SpriteFont>("Menu/Fonts/MainMenuFont");
-		_wrestler = new Wrestler(_playerManager.PlayersConnected[0], _playerManager.PlayersConnected[1], _contentManager.Load<Texture2D>("Sumo/Sprites/Sumos"), _contentManager.Load<Texture2D>("Sumo/Sprites/ArmsOverlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/ArmsUnderlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/SumoOverlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/SumoUnderlay"), _font, new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f, (float)base.GraphicsDevice.Viewport.Height / 2f), 1.5f);
+		_wrestler = new Wrestler(_playerManager.PlayersConnected[0], _playerManager.PlayersConnected[1], _contentManager.Load<Texture2D>("Sumo/Sprites/Sumos"), _contentManager.Load<Texture2D>("Sumo/Sprites/ArmsOverlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/ArmsUnderlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/SumoOverlay"), _contentManager.Load<Texture2D>("Sumo/Sprites/SumoUnderlay"), _font, new Vector2((float)1280 / 2f, (float)720 / 2f), 1.5f);
 		base.LoadContent();
 	}
 
@@ -121,7 +130,7 @@ internal class Sumo : Minigame
 			base.GraphicsDevice.SetRenderTarget(_effectCanvas[num + 1]);
 			base.GraphicsDevice.Clear(Color.White);
 			_spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-			_spriteBatch.Draw(_effectCanvas[num], base.GraphicsDevice.Viewport.Bounds, Color.White);
+			_spriteBatch.Draw(_effectCanvas[num], new Rectangle(0, 0, 1280, 720), Color.White);
 			_spriteBatch.End();
 		}
 		base.GraphicsDevice.SetRenderTarget(_effectCanvas[0]);
@@ -138,13 +147,13 @@ internal class Sumo : Minigame
 			_spriteBatch.Draw(_effectCanvas[i], _wrestler.Position + (_wrestler.Position - _wrestler.Center) * i * (0.2f * (1f + (float)Math.Sin(_timePassed))), null, Color.White * 0.1f, 0f, _wrestler.Position, 1f + (2f + (float)Math.Sin(_timePassed)) * 0.025f * (float)i, SpriteEffects.None, 0f);
 		}
 		_spriteBatch.Draw(_effectCanvas[0], new Rectangle(0, 0, 1280, 720), Color.White * 0.4f);
-		Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[0].Name, new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f - 400f, (float)base.GraphicsDevice.Viewport.Height / 2f), _playerManager.PlayersConnected[0].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
-		Helper.DrawOutlinedText(_spriteBatch, _font, _playerOneWins.ToString(), new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f - 400f, (float)base.GraphicsDevice.Viewport.Height / 2f + 60f), _playerManager.PlayersConnected[0].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
-		Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[1].Name, new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f + 400f, (float)base.GraphicsDevice.Viewport.Height / 2f), _playerManager.PlayersConnected[1].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
-		Helper.DrawOutlinedText(_spriteBatch, _font, _playerTwoWins.ToString(), new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f + 400f, (float)base.GraphicsDevice.Viewport.Height / 2f + 60f), _playerManager.PlayersConnected[1].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
+		Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[0].Name, new Vector2((float)1280 / 2f - 400f, (float)720 / 2f), _playerManager.PlayersConnected[0].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
+		Helper.DrawOutlinedText(_spriteBatch, _font, _playerOneWins.ToString(), new Vector2((float)1280 / 2f - 400f, (float)720 / 2f + 60f), _playerManager.PlayersConnected[0].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
+		Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[1].Name, new Vector2((float)1280 / 2f + 400f, (float)720 / 2f), _playerManager.PlayersConnected[1].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
+		Helper.DrawOutlinedText(_spriteBatch, _font, _playerTwoWins.ToString(), new Vector2((float)1280 / 2f + 400f, (float)720 / 2f + 60f), _playerManager.PlayersConnected[1].Colour(), Color.Black, Helper.OutlineType.Both, centered: true, 1f);
 		if (!_wrestler.Active)
 		{
-			Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[_wrestler.Winner].Name + " wins", new Vector2((float)base.GraphicsDevice.Viewport.Width / 2f, (float)base.GraphicsDevice.Viewport.Height / 2f), _playerManager.PlayersConnected[_wrestler.Winner].Colour(), Color.Black, Helper.OutlineType.Both, (float)Math.Sin(_timePassed * 0.5f) * 0.5f, centered: true, 1f, new Vector2(0.95f, 0.95f) + Vector2.One * 0.05f * ((float)Math.Sin(_timePassed) + 1f));
+			Helper.DrawOutlinedText(_spriteBatch, _font, _playerManager.PlayersConnected[_wrestler.Winner].Name + " wins", new Vector2((float)1280 / 2f, (float)720 / 2f), _playerManager.PlayersConnected[_wrestler.Winner].Colour(), Color.Black, Helper.OutlineType.Both, (float)Math.Sin(_timePassed * 0.5f) * 0.5f, centered: true, 1f, new Vector2(0.95f, 0.95f) + Vector2.One * 0.05f * ((float)Math.Sin(_timePassed) + 1f));
 		}
 		_spriteBatch.Draw(_foreground, new Rectangle(0, 0, 1280, 720), Color.White);
 		_spriteBatch.End();
